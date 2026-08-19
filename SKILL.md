@@ -63,23 +63,29 @@ git branch -vv
 - `docs`：只修改文档
 - `chore`：构建、配置、依赖或工具链
 
+提交信息语言规则：
+
+- 标题开头的 Conventional Commits 类型枚举必须使用英文：`feat`、`fix`、`refactor`、`test`、`docs`、`chore`。
+- 类型后面的 scope、标题描述和正文一律使用简体中文；不要把变更说明写成英文。
+- Markdown 无头列表中的每一条内容都使用中文，描述实际变更、行为影响或验证结果。
+
 标题格式：
 
 ```text
-<type>(<optional-scope>): <imperative short summary>
+<type>(<可选中文 scope>): <中文动词短语>
 ```
 
-标题使用英文、动词开头、说明目的而不是罗列文件，尽量不超过 72 个字符。正文使用 Markdown 无头列表，一条描述一个实际变更，说明行为或影响：
+标题使用对应类型开头、中文动词开头，说明目的而不是罗列文件，尽量不超过 72 个字符。正文使用 Markdown 无头列表，一条描述一个实际变更，说明行为或影响：
 
 ```text
-fix(three-point): classify station request failures
+fix(示例范围): 这里仅展示格式，不代表实际提交内容
 
-- Return structured errors for business, HTTP, network, timeout, and invalid responses
-- Update each station independently as its request settles
-- Show station-specific retry feedback and suppress duplicate image error toasts
+- 示例条目一：仅用于说明正文格式
+- 示例条目二：实际提交时必须替换
+- 示例条目三：不得照抄示例内容
 ```
 
-不要在 commit message 中写未经验证的结论，不要把审查意见、临时调试信息或完整 diff 粘进去。生成后先展示完整 commit message，让用户能检查标题和列表。
+上面的代码块是格式示例，不得作为默认提交内容，也不得复制其中的 scope、标题措辞或列表条目。每次都必须根据当前实际 diff、变更分类、审查结论和真实影响重新生成提交信息；如果当前变更与示例主题无关，提交信息中不得出现“三点照合”或示例中的错误分类。不要在 commit message 中写未经验证的结论，不要把审查意见、临时调试信息或完整 diff 粘进去。生成后先展示完整 commit message，让用户能检查标题和列表。
 
 ### 3. 创建本地提交
 
