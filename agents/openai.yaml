@@ -1,4 +1,4 @@
 interface:
   display_name: "Review Push"
-  short_description: "审查变更并生成规范提交内容后安全推送到远端并检查冲突"
-  default_prompt: "请对当前分支的变更执行 review-push：先按 merge-review 方法审查并分类变更；确认没有阻塞问题后生成 Conventional Commits 格式的提交信息，提交本地变更，fetch 当前分支并检查冲突，最后推送。"
+  short_description: "按实际 diff 提交推送；简单资产走快车道，逻辑变更先审查"
+  default_prompt: "请对当前分支执行 review-push。简单项目资产（图、字体、静态资源及接入映射）按实际 diff 写提交信息后直接提交并推送；其余变更先按 merge-review 审查。本轮若已要求推送，提交并 fetch 后立刻 push。"
